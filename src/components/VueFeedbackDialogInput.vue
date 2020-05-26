@@ -62,6 +62,10 @@ export default {
       required: false,
       default: () => {}
     },
+    reset: {
+      type: Boolean,
+      required: true
+    }
   },
   data () {
     return {
@@ -91,6 +95,12 @@ export default {
     }
   },
   watch: {
+    reset () {
+      this.name = '',
+      this.description = '',
+      this.email= ''
+      this.valid = false
+    },
     async inputValues () {
       clearTimeout(this.debounceTimer)
       // delay new call 500ms

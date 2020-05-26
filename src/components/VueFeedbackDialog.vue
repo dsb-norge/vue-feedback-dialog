@@ -14,7 +14,7 @@
       />
     </div>
     <span
-      v-show="!read"
+      v-show="!read && messages.length"
       :style="[themeStylingBorder, themeStylingColor, themeStylingBackground]"
       class="notification"
     >

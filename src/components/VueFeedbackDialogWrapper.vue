@@ -15,6 +15,7 @@
         <slot name="dialog-input">
           <VueFeedbackDialogInput
             :options="options"
+            :reset="!flipped"
             @update="updateInput"
           />
         </slot>
@@ -74,10 +75,10 @@ export default {
   },
   methods: {
     async sendFeedback () {
-      if (this.input && this.messages.length) {
+      if (this.input) {
         this.$emit('feedback', this.input)
-        /* no messages = user is only facing input dialog */
-      } else {
+        /* Reset form and close with a spinn */
+        this.flipped = false
         this.$emit('close')
       }
     },
