@@ -101,6 +101,16 @@ components: {
 | ---    | ---                      |
 | feedback | Triggered on send, user click send on input form |
 
+Value in feedback event:
+```javascript
+    {
+        name: this.name,
+        description: this.description,
+        path: window.location.href,
+        email: this.email
+    }
+```
+
 ### Feedback only mode
 If no messages is provided only the feedback form will be visible.
 

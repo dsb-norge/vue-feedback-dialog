@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <VueFeedbackDialog :messages="messages" />
+    <VueFeedbackDialog
+      :messages="messages"
+      :options="options"
+    />
   </div>
 </template>
 
@@ -22,7 +25,29 @@ export default {
           header: 'Down time 10.05.20',
           info: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32'
         }
-      ]
+      ],
+      options: {
+        text: {
+          headerInfo: 'Driftsinformasjon: ',
+          headerDialog: 'Send inn forslag eller feilmelding: ',
+          dialogLeftControlText: 'Tilbake',
+          infoLeftControlText: 'Lukk',
+          dialogRightControlText: 'Send',
+          infoRightControlText: 'Rapporter feil',
+          defaultMessage: 'Ingen nye meldinger',
+          name: 'Navn',
+          nameError: 'Dette feltet er påkrevd',
+          description: 'Beskrivelse...',
+          descriptionError: 'Dette feltet er påkrevd',
+          email: 'Epost',
+          emailError: 'Ugyldig epost'
+        },
+        layout: {
+          color: '#e25923',
+          border: '#e25923',
+          backgroundColor: 'white'
+        }
+      }
     }
   }
 }

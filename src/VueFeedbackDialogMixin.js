@@ -25,11 +25,12 @@ export const VueFeedbackDialogMixin = {
       }
     },
     mounted () {
-      if (this.options !== null && this.options !== undefined) {
+      if (this.options) {
         this.mergeDefaultOptionsWithProp(this.options)
       }
     },
     computed: {
+      // Dynamic styling based on user options
       themeStylingBorder () {
         return {
           border: 'solid ' + this.defaultOptions.layout.border + ' 2px'
@@ -59,6 +60,7 @@ export const VueFeedbackDialogMixin = {
       }
     },
     methods: {
+      // If user provides options, merge options with default options
       mergeDefaultOptionsWithProp: function (options) {
         var result = this.defaultOptions
         for (var option in options) {
@@ -71,13 +73,6 @@ export const VueFeedbackDialogMixin = {
           } else {
             result[option] = options[option]
           }
-        }
-      }
-    },
-    watch: {
-      options: function (val) {
-        if (val !== null && val !== undefined) {
-          this.mergeDefaultOptionsWithProp(val)
         }
       }
     }

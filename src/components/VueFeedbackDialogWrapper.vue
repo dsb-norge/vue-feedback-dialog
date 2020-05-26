@@ -67,6 +67,7 @@ export default {
     }
   },
   mounted () {
+    // No messages, give user input dialog
     if (!this.messages.length) {
       this.flipped = true
     }
@@ -80,6 +81,7 @@ export default {
         this.$emit('close')
       }
     },
+    // Flipp info/input
     flipp (value) {
       this.flipped = value
     },
