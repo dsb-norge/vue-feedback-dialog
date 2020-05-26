@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { VueFeedbackDialogMixin } from '../VueFeedbackDialogMixin'
+import { VueFeedbackDialogMixin } from '@/VueFeedbackDialogMixin'
 
 export default {
   name: 'VueFeedbackDialogInfo',

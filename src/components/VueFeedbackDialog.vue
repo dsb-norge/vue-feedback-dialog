@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { VueFeedbackDialogMixin } from '../VueFeedbackDialogMixin'
+import { VueFeedbackDialogMixin } from '@/VueFeedbackDialogMixin'
 import VueFeedbackDialogWrapper from './VueFeedbackDialogWrapper'
 import VueFeedbackDialogOpenIcon from './VueFeedbackDialogOpenIcon'
 import VueFeedbackDialogCloseIcon from './VueFeedbackDialogCloseIcon'

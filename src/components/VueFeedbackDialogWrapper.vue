@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { VueFeedbackDialogMixin } from '../VueFeedbackDialogMixin'
+import { VueFeedbackDialogMixin } from '@/VueFeedbackDialogMixin'
 import VueFeedbackDialogInput from './VueFeedbackDialogInput'
 import VueFeedbackDialogControls from './VueFeedbackDialogControls'
 import VueFeedbackDialogInfo from './VueFeedbackDialogInfo'
