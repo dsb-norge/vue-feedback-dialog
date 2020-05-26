@@ -1,5 +1,5 @@
 # vue-feedback-dialog
-Feedback dialog for Vuetify<br>
+Feedback dialog for Vue/Vuetify<br>
 v0.1.0
 
 <img src="https://img.shields.io/badge/license-MIT-green.svg" /> <img src="https://img.shields.io/badge/dependencies-0-brightgreen.svg" />
@@ -33,8 +33,7 @@ components: {
 
 ```
 
-### Messages format:
-// Not required/Optional
+### Messages format: (optional)
 ```javascript
       messages: [
         {
@@ -49,8 +48,7 @@ components: {
 
 ```
 
-### Options format:
-// Not required/Optional
+### Options format: (optional)
 ```javascript
     defaultOptions: {
         text: {
@@ -99,8 +97,25 @@ components: {
 | ---    | ---                      |
 | feedback | Triggered on send, user click send on input form |
 
-### No info only feedback mode
+### Feedback only mode
 If no messages is provided only the feedback form will be visible.
 
-### Todo 📌  
+## Build:
+
+### Local basic test:
+```
+npm run serve
+```
+
+### Compile and build for production
+```
+npm run build
+```
+
+### Publish to NPM
+```
+npm publish
+```
+
+## Todo 📌  
 * Publish to @dsb-norge/vue-feedback-dialog (pending access)
