@@ -34,6 +34,7 @@ components: {
 ```
 
 ### Messages format: (optional)
+
 ```javascript
       messages: [
         {
@@ -49,6 +50,7 @@ components: {
 ```
 
 ### Options format: (optional)
+
 ```javascript
     defaultOptions: {
         text: {
@@ -74,6 +76,7 @@ components: {
 ```
 
 #### Options
+
 | Name                  | Type      | Default |
 | ---                   | ---       | --- |
 | headerInfo            | String    | Information: (h4) |
@@ -93,6 +96,7 @@ components: {
 | background            | String    | #FFF  |
 
 #### Events
+
 | Name   | Description              |
 | ---    | ---                      |
 | feedback | Triggered on send, user click send on input form |
