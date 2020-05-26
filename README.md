@@ -116,11 +116,6 @@ If no messages is provided only the feedback form will be visible.
 
 ## Build:
 
-### Local basic test:
-```
-npm run serve
-```
-
 ### Compile and build for production
 ```
 npm run build
