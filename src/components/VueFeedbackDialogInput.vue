@@ -17,7 +17,6 @@
           :rules="nameRules"
           dense
           outlined
-          required
         />
       </v-col>
     </v-row>
@@ -30,7 +29,6 @@
           dense
           height="150"
           outlined
-          required
           rows="6"
         />
       </v-col>
@@ -43,7 +41,6 @@
           :rules="emailRules"
           dense
           outlined
-          required
         />
       </v-col>
     </v-row>

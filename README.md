@@ -1,6 +1,6 @@
 # vue-feedback-dialog
 Feedback dialog for Vue/Vuetify<br>
-v0.1.3
+v0.1.4
 
 <img src="https://img.shields.io/badge/license-MIT-green.svg" /> <img src="https://img.shields.io/badge/dependencies-0-brightgreen.svg" />
 
@@ -80,7 +80,7 @@ components: {
 | Name                  | Type      | Default |
 | ---                   | ---       | --- |
 | headerInfo            | String    | Information: (h4) |
-| headerDialog          | String    | Report error or suggestion: |
+| headerDialog          | String    | Report error or suggestion: (h4) |
 | dialogLeftControlText | String    | Back |
 | infoLeftControlText   | String    | Close |
 | dialogRightControlText| String    | Send |
