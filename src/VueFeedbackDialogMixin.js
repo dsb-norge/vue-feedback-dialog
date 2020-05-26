@@ -24,7 +24,7 @@ export const VueFeedbackDialogMixin = {
         }
       }
     },
-    mounted () {
+    created () {
       if (this.options) {
         this.mergeDefaultOptionsWithProp(this.options)
       }
