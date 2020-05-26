@@ -7,7 +7,7 @@
     >
       <v-btn
         :style="secondaryBtn"
-        @click="flipped ? messageAvailable ? $emit('flipp', false) : $emit('close') : $emit('close')"
+        @click="flipped ? messageAvailable ? $emit('flip', false) : $emit('close') : $emit('close')"
       >
         {{ flipped ? defaultOptions.text.dialogLeftControlText : defaultOptions.text.infoLeftControlText }}
       </v-btn>
@@ -20,7 +20,7 @@
       <v-btn
         :style="primaryBtn"
         :disabled="!inputValid && flipped"
-        @click="flipped ? $emit('feedback') : $emit('flipp', true) "
+        @click="flipped ? $emit('feedback') : $emit('flip', true) "
       >
         {{ flipped ? defaultOptions.text.dialogRightControlText : defaultOptions.text.infoRightControlText }}
       </v-btn>

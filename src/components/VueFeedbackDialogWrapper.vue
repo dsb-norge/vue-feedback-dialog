@@ -26,7 +26,7 @@
           :flipped="flipped"
           :input-valid="input !== null"
           :message-available="!!messages.length"
-          @flipp="flipp"
+          @flip="flip"
           @close="$emit('close')"
           @feedback="sendFeedback"
         />
@@ -82,8 +82,8 @@ export default {
         this.$emit('close')
       }
     },
-    // Flipp info/input
-    flipp (value) {
+    // Flip info/input
+    flip (value) {
       this.flipped = value
     },
     updateInput (value) {
