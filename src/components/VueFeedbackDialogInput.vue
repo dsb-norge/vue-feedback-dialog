@@ -12,9 +12,9 @@
     <v-row>
       <v-col class="pb-0">
         <v-text-field
-          v-model="name"
-          :label="defaultOptions.text.name"
-          :rules="nameRules"
+          v-model="reporter"
+          :label="defaultOptions.text.reporter"
+          :rules="reporterRules"
           dense
           outlined
         />
@@ -67,12 +67,12 @@ export default {
   data () {
     return {
       valid: false,
-      name: '',
+      reporter: '',
       description: '',
       email: '',
       debounceTimer: null,
-      nameRules: [
-        v => !!v || this.defaultOptions.text.nameError
+      reporterRules: [
+        v => !!v || this.defaultOptions.text.reporterError
       ],
       descriptionRules: [
         v => !!v || this.defaultOptions.text.descriptionError
@@ -85,7 +85,7 @@ export default {
   },
   computed: {
     inputValues () {
-      return this.name +
+      return this.reporter +
       this.description +
       this.email +
       Date.now()
@@ -93,7 +93,7 @@ export default {
   },
   watch: {
     reset () {
-      this.name = '',
+      this.reporter = '',
       this.description = '',
       this.email= ''
       this.valid = false
@@ -105,7 +105,7 @@ export default {
         if (this.valid) {
           this.$emit('update',
             {
-              name: this.name,
+              reporter: this.reporter,
               description: this.description,
               path: window.location.href,
               email: this.email
