@@ -60,8 +60,8 @@ components: {
             infoLeftControlText: 'Close',
             dialogRightControlText: 'Send',
             infoRightControlText: 'Report bug',
-            name: 'Name',
-            nameError: 'This field is required',
+            reporter: 'Reporter',
+            reporterError: 'This field is required',
             description: 'Description...',
             descriptionError: 'This field is required',
             email: 'Email',
@@ -85,8 +85,8 @@ components: {
 | infoLeftControlText   | String    | Close |
 | dialogRightControlText| String    | Send |
 | infoRightControlText  | String    | Report bug |
-| name                  | String    | Name |
-| nameError             | String    | This field is required |
+| reporter              | String    | Reporter |
+| reporterError         | String    | This field is required |
 | description           | String    | Description... |
 | descriptionError      | String    | This field is required |
 | email                 | String    | Email |
@@ -104,7 +104,7 @@ components: {
 Value in feedback event:
 ```javascript
     {
-        name: this.name,
+        reporter: this.reporter,
         description: this.description,
         path: window.location.href,
         email: this.email
