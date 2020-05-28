@@ -93,10 +93,7 @@ export default {
   },
   watch: {
     reset () {
-      this.reporter = '',
-      this.description = '',
-      this.email= ''
-      this.valid = false
+      this.$refs.form.reset()
     },
     async inputValues () {
       clearTimeout(this.debounceTimer)
