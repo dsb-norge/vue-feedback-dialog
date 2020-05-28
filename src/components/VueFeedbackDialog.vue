@@ -6,7 +6,7 @@
     <div
       :style="themeStylingColor"
       class="icon"
-      @click="[dialogOpen = !dialogOpen, read = true]"
+      @click="toggleDialog"
     >
       <component
         :is="dialogOpen ? 'VueFeedbackDialogCloseIcon' : 'VueFeedbackDialogOpenIcon'"
@@ -25,8 +25,10 @@
         v-show="dialogOpen"
         :options="options"
         :messages="messages"
-        @close="dialogOpen = false"
+        :flipped="flipped"
+        @close="[flipped = false, dialogOpen = false]"
         @feedback="sendFeedback"
+        @flip="flipped = !flipped"
       />
     </transition>
   </div>
@@ -61,12 +63,21 @@ export default {
   data () {
     return {
       dialogOpen: false,
-      read: false
+      read: false,
+      flipped: false
     }
   },
   methods: {
     sendFeedback (value) {
       this.$emit('feedback', value)
+    },
+    toggleDialog () {
+      // No messages take user to form
+      if (!this.messages.length) {
+        this.flipped = true
+      }
+      this.dialogOpen = !this.dialogOpen
+      this.read = true
     }
   }
 }
