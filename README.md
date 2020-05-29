@@ -6,15 +6,12 @@ v0.2.3
 
 ## Demo
 #### Icon (right bottom corner fixed):
-
 ![alt text](https://github.com/dsb-norge/vue-feedback-dialog/blob/master/demo/dialog_icon.PNG)
 
 #### Info screen:
-
 ![alt text](https://github.com/dsb-norge/vue-feedback-dialog/blob/master/demo/dialog_info.PNG)
 
 #### Input screen:
-
 ![alt text](https://github.com/dsb-norge/vue-feedback-dialog/blob/master/demo/dialog_input.PNG)
 
 ## Install
