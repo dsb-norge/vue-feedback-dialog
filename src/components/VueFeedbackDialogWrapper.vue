@@ -26,7 +26,7 @@
           :flipped="flipped"
           :input-valid="input !== null"
           :message-available="!!messages.length"
-          @flip="flip"
+          @flip="$emit('flip')"
           @close="$emit('close')"
           @feedback="sendFeedback"
         />
@@ -59,18 +59,15 @@ export default {
       type: Array,
       required: false,
       default: () => []
+    },
+    flipped: {
+      type: Boolean,
+      required: true
     }
   },
   data () {
     return {
-      flipped: false,
       input: null
-    }
-  },
-  mounted () {
-    // No messages, give user input dialog
-    if (!this.messages.length) {
-      this.flipped = true
     }
   },
   methods: {
@@ -78,13 +75,8 @@ export default {
       if (this.input) {
         this.$emit('feedback', this.input)
         /* Reset form and close with a spinn */
-        this.flipped = false
         this.$emit('close')
       }
-    },
-    // Flip info/input
-    flip (value) {
-      this.flipped = value
     },
     updateInput (value) {
       this.input = value
