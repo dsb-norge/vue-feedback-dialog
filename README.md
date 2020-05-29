@@ -4,6 +4,19 @@ v0.2.3
 
 <img src="https://img.shields.io/badge/license-MIT-green.svg" /> <img src="https://img.shields.io/badge/dependencies-0-brightgreen.svg" />
 
+## Demo
+#### Icon (right bottom corner fixed):
+
+![alt text](https://github.com/dsb-norge/vue-feedback-dialog/blob/master/demo/dialog_icon.PNG)
+
+#### Info screen:
+
+![alt text](https://github.com/dsb-norge/vue-feedback-dialog/blob/master/demo/dialog_info.PNG)
+
+#### Input screen:
+
+![alt text](https://github.com/dsb-norge/vue-feedback-dialog/blob/master/demo/dialog_input.PNG)
+
 ## Install
 
 1. Install Vuetify
