@@ -135,6 +135,3 @@ npm run build
 ```
 npm publish
 ```
-
-## Todo 📌  
-* Publish to @dsb-norge/vue-feedback-dialog (pending access)
