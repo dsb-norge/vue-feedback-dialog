@@ -1,15 +1,18 @@
 {
-  "name": "vue-feedback-dialog",
+  "name": "@dsb-norge/vue-feedback-dialog",
   "description": "Feedback dialog based on vuetify for Vue.js",
   "author": "Lars M Hejll",
   "license": "MIT",
   "homepage": "https://github.com/dsb-norge/vue-feedback-dialog",
   "version": "0.2.3",
   "private": false,
-  "main": "./dist/VueFeedbackDialog.common.js",
+  "main": "dist/VueFeedbackDialog.common.js",
+  "browser": "dist/VueFeedbackDialog.umd.js",
   "scripts": {
     "serve": "vue-cli-service serve ./dev/main.js",
-    "build": "vue-cli-service build --target lib --name VueFeedbackDialog src/index.js"
+    "build": "vue-cli-service build --target lib --name VueFeedbackDialog src/index.js",
+    "version": "npm run build && git add -A",
+    "postversion": "git push -u --follow-tags origin master && npm publish"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.9",

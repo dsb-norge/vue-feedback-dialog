@@ -21,7 +21,7 @@ v0.2.3
 
 2. Install component:
 ```bash
-npm install vue-feedback-dialog --save
+npm install @dsb-norge/vue-feedback-dialog --save
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ npm install vue-feedback-dialog --save
 ### Setup
 Import in component (or use global):
 ```javascript
-import VueFeedbackDialog from 'vue-feedback-dialog'
+import VueFeedbackDialog from '@dsb-norge/vue-feedback-dialog'
 
 components: {
     VueFeedbackDialog
@@ -133,5 +133,21 @@ npm run build
 
 ### Publish to NPM
 ```
-npm publish
+# Do some work...
+
+# x.x.1 -> x.x.2
+npm version patch
+
+# x.1.0 -> x.2.0
+npm version minor
+
+# 1.0.0 -> 2.0.0
+npm version major
+
 ```
+
+All these will:
+1. Set the version number in `package.json` 
+1. Build the plugin
+1. Commit version to git and push upstream
+1. Publish the plugin to NPM registry
