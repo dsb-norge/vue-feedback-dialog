@@ -104,6 +104,14 @@ components: {
 | border                | String    | #34495e |
 | background            | String    | #FFF  |
 
+#### Props
+
+| Name    | Type     | Description              |
+| ---     | ---      | ---                      |
+| options | Object   | Options object as described above |
+| reset   | Boolean  | Trigger to reset schema |
+| meta    | String   | Additional meta information, ie: App version, date time etc |
+
 #### Events
 
 | Name   | Description              |
@@ -116,7 +124,8 @@ Value in feedback event:
         reporter: this.reporter,
         description: this.description,
         path: window.location.href,
-        email: this.email
+        email: this.email,
+        meta: this.meta
     }
 ```
 

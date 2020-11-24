@@ -62,6 +62,11 @@ export default {
     reset: {
       type: Boolean,
       required: true
+    },
+    meta: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   data () {
@@ -105,7 +110,8 @@ export default {
               reporter: this.reporter,
               description: this.description,
               path: window.location.href,
-              email: this.email
+              email: this.email,
+              meta: this.meta
             })
         } else {
           this.$emit('update', null)
