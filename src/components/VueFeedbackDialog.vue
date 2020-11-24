@@ -58,6 +58,11 @@ export default {
       type: Array,
       required: false,
       default: () => []
+    },
+    meta: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   data () {
@@ -68,8 +73,9 @@ export default {
     }
   },
   methods: {
-    sendFeedback (value) {
-      this.$emit('feedback', value)
+    sendFeedback (input) {
+      input.meta = this.meta
+      this.$emit('feedback', input)
     },
     toggleDialog () {
       // No messages take user to form

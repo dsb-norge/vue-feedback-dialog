@@ -106,11 +106,11 @@ components: {
 
 #### Props
 
-| Name    | Type     | Description              |
-| ---     | ---      | ---                      |
-| options | Object   | Options object as described above |
-| reset   | Boolean  | Trigger to reset schema |
-| meta    | String   | Additional meta information, ie: App version, date time etc |
+| Name     | Type     | Description              |
+| ---      | ---      | ---                      |
+| options  | Object   | Options object as described above |
+| messages | Array    | Info messages to user |
+| meta     | String   | Additional meta information, ie: App version, date time etc |
 
 #### Events
 
