@@ -15,7 +15,7 @@
     "postversion": "git push -u --follow-tags origin master && npm publish"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.15",
+    "@vue/cli-plugin-babel": "5.0.4",
     "@vue/cli-service": "^4.5.15",
     "sass": "^1.32.13",
     "sass-loader": "^10.2.0",
