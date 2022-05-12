@@ -4,7 +4,7 @@
   "author": "Lars M Hejll",
   "license": "MIT",
   "homepage": "https://github.com/dsb-norge/vue-feedback-dialog",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "main": "dist/VueFeedbackDialog.common.js",
   "browser": "dist/VueFeedbackDialog.umd.js",
@@ -15,15 +15,15 @@
     "postversion": "git push -u --follow-tags origin master && npm publish"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "4.5.17",
-    "@vue/cli-service": "4.5.17",
+    "@vue/cli-plugin-babel": "5.0.4",
+    "@vue/cli-service": "5.0.4",
     "sass": "1.51.0",
-    "sass-loader": "10.2.1",
-    "vue": "^2.6.14",
+    "sass-loader": "12.6.0",
+    "vue": "2.6.14",
     "vue-cli-plugin-vuetify": "2.4.8",
-    "vue-template-compiler": "^2.6.14",
+    "vue-template-compiler": "2.6.14",
     "vuetify": "2.6.5",
-    "vuetify-loader": "^1.7.3"
+    "vuetify-loader": "1.7.3"
   },
   "files": [
     "dist"
