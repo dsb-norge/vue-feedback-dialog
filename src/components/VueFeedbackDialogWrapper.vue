@@ -2,10 +2,13 @@
   <div
     class="dialog-wrapper"
     :style="[themeStylingBorder, themeStylingBackground]"
-    :class="flipped ? 'flip-container flipped': 'flip-container'"
+    :class="flipped ? 'flip-container flipped' : 'flip-container'"
   >
     <v-row>
-      <v-col class="dialog-content" cols="12">
+      <v-col
+        class="dialog-content"
+        cols="12"
+      >
         <slot name="dialog-info">
           <VueFeedbackDialogInfo
             :options="options"

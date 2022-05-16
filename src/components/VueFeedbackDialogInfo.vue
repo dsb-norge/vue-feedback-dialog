@@ -9,14 +9,16 @@
     </v-row>
     <v-row>
       <v-col class="pt-0">
-          <ul
-            class="dialog-info-message-list"
-            v-for="(message, i) in messages"
-            :key="i"
-          >
-            <li>
-              <h5>{{ message.header }}</h5>
-              <p class="ma-0"> {{ message.info }} </p>
+        <ul
+          v-for="(message, i) in messages"
+          :key="i"
+          class="dialog-info-message-list"
+        >
+          <li>
+            <h5>{{ message.header }}</h5>
+            <p class="ma-0">
+              {{ message.info }}
+            </p>
           </li>
         </ul>
       </v-col>

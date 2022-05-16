@@ -1,4 +1,4 @@
-  
+
 import Vue from 'vue'
 
 import VueFeedbackDialog from './components/VueFeedbackDialog.vue'
