@@ -1,7 +1,7 @@
 # vue-feedback-dialog
 Feedback dialog for Vue/Vuetify<br>
 
-<img src="https://img.shields.io/badge/license-MIT-green.svg" /> <img src="https://img.shields.io/badge/dependencies-0-brightgreen.svg" />
+<img src="https://img.shields.io/badge/license-MIT-green.svg"  alt="license"/> <img src="https://img.shields.io/badge/dependencies-0-brightgreen.svg"  alt="deps"/>
 
 ## Demo
 #### Icon (right bottom corner fixed):

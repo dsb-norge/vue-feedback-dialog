@@ -124,9 +124,7 @@ export default {
   transition: 0.6s;
   transform-style: preserve-3d;
   width: 100%;
-  padding: 20px;
-  padding-top: 0px;
-  padding-bottom: 10px;
+  padding: 20px 20px 10px 20px;
   top: 0;
   left: 0;
 }

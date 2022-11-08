@@ -3,16 +3,18 @@
     :style="[themeStylingBorder, themeStylingBackground]"
     class="feedback-icon-wrapper"
   >
-    <div
+    <v-btn
       :style="themeStylingColor"
       class="icon"
+      icon
       @click="toggleDialog"
     >
       <component
+        class="svg-icon"
         :is="dialogOpen ? 'VueFeedbackDialogCloseIcon' : 'VueFeedbackDialogOpenIcon'"
         :color="defaultOptions.layout.color"
       />
-    </div>
+    </v-btn>
     <span
       v-show="!read && messages.length"
       :style="[themeStylingBorder, themeStylingColor, themeStylingBackground]"
@@ -101,10 +103,13 @@ export default {
 }
 
 .feedback-icon-wrapper .icon {
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
   width: 3.75rem;
   height: 3.75rem;
+}
+
+.feedback-icon-wrapper .icon .svg-icon {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .feedback-icon-wrapper .icon:hover {
@@ -115,7 +120,7 @@ export default {
   position: absolute;
   top: -10px;
   right: -10px;
-  padding: 0px 7px;
+  padding: 0 7px;
   border-radius: 50%;
   font-weight: bold;
 }
