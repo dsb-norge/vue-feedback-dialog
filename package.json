@@ -15,15 +15,15 @@
     "postversion": "git push -u --follow-tags origin master && npm publish"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^5.0.8",
-    "@vue/cli-service": "^5.0.8",
+    "@vue/cli-plugin-babel": "5.0.8",
+    "@vue/cli-service": "5.0.8",
     "sass": "^1.32.13",
-    "sass-loader": "^13.1.0",
-    "vue": "^2.7.13",
-    "vue-cli-plugin-vuetify": "^2.5.8",
-    "vue-template-compiler": "^2.7.13",
-    "vuetify": "^2.6.12",
-    "vuetify-loader": "^1.9.2"
+    "sass-loader": "13.1.0",
+    "vue": "2.7.13",
+    "vue-cli-plugin-vuetify": "2.5.8",
+    "vue-template-compiler": "2.7.13",
+    "vuetify": "2.6.12",
+    "vuetify-loader": "1.9.2"
   },
   "files": [
     "dist"
