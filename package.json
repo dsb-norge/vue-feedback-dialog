@@ -4,7 +4,7 @@
   "author": "Lars M Hejll",
   "license": "MIT",
   "homepage": "https://github.com/dsb-norge/vue-feedback-dialog",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "main": "dist/VueFeedbackDialog.common.js",
   "browser": "dist/VueFeedbackDialog.umd.js",
