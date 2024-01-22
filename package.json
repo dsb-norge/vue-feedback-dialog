@@ -11,7 +11,7 @@
   "scripts": {
     "serve": "vue-cli-service serve ./dev/main.js",
     "build": "vue-cli-service build --target lib --name VueFeedbackDialog src/index.js",
-    "version": "npm run build && git add -A",
+    "version": "git add -A",
     "postversion": "git push -u --follow-tags origin master"
   },
   "devDependencies": {
@@ -38,5 +38,8 @@
     "feedback",
     "feedback dialog",
     "user feedback"
-  ]
+  ],
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001579"
+  }
 }
