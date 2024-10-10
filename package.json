@@ -17,7 +17,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "5.0.8",
     "@vue/cli-service": "5.0.8",
-    "sass": "1.32.13",
+    "sass": "1.79.4",
     "sass-loader": "13.3.3",
     "vue": "2.7.16",
     "vue-cli-plugin-vuetify": "2.5.8",
@@ -40,6 +40,6 @@
     "user feedback"
   ],
   "dependencies": {
-    "caniuse-lite": "1.0.30001664"
+    "caniuse-lite": "1.0.30001667"
   }
 }
