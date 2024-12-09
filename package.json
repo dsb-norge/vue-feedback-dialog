@@ -1,37 +1,8 @@
 {
   "name": "@dsb-norge/vue-feedback-dialog",
-  "description": "Feedback dialog based on vuetify for Vue.js",
-  "author": "Lars M Hejll",
-  "license": "MIT",
-  "homepage": "https://github.com/dsb-norge/vue-feedback-dialog",
-  "version": "1.2.2",
-  "private": false,
-  "main": "dist/VueFeedbackDialog.common.js",
-  "browser": "dist/VueFeedbackDialog.umd.js",
-  "scripts": {
-    "serve": "vue-cli-service serve ./dev/main.js",
-    "build": "vue-cli-service build --target lib --name VueFeedbackDialog src/index.js",
-    "version": "git add -A",
-    "postversion": "git push -u --follow-tags origin master"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "5.0.8",
-    "@vue/cli-service": "5.0.8",
-    "sass": "1.82.0",
-    "sass-loader": "13.3.3",
-    "vue": "2.7.16",
-    "vue-cli-plugin-vuetify": "2.5.8",
-    "vue-template-compiler": "2.7.16",
-    "vuetify": "2.7.2",
-    "vuetify-loader": "1.9.2"
-  },
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dsb-norge/vue-feedback-dialog.git"
-  },
+  "version": "2.0.0",
+  "description": "Feedback dialog based on Quasar for Vue",
+  "type": "module",
   "keywords": [
     "vuejs",
     "vue.js",
@@ -39,7 +10,56 @@
     "feedback dialog",
     "user feedback"
   ],
-  "dependencies": {
-    "caniuse-lite": "1.0.30001686"
+  "license": "MIT",
+  "homepage": "https://github.com/dsb-norge/vue-feedback-dialog",
+  "private": false,
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "preview": "vite preview",
+    "version": "git add -A",
+    "postversion": "git push -u --follow-tags origin master",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-feedback-plugin.umd.js",
+  "module": "./dist/vue-feedback-plugin.es.js",
+  "style": "./dist/style.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vue-feedback-plugin.es.js",
+      "require": "./dist/vue-feedback-plugin.umd.js"
+    },
+    "./dist/vue-feedback-dialog.css": "./dist/vue-feedback-dialog.css"
+  },
+  "peerDependencies": {
+    "@quasar/extras": "^1.0.0",
+    "quasar": "^2.0.0",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@dsb-norge/eslint-config-dsb-vue3-ts": "^3.0.4",
+    "@quasar/extras": "1.16.15",
+    "@quasar/vite-plugin": "1.8.1",
+    "@types/node": "22.10.1",
+    "@vitejs/plugin-vue": "5.2.1",
+    "quasar": "2.17.4",
+    "sass": "1.82.0",
+    "typescript": "5.7.2",
+    "vite": "6.0.3",
+    "vite-plugin-dts": "4.3.0",
+    "vue": "3.5.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dsb-norge/vue-feedback-dialog.git"
+  },
+  "engines": {
+    "node": "20"
   }
 }

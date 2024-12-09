@@ -1,134 +1,118 @@
+<script setup lang="ts">
+import { DialogChainObject, QFab, useQuasar } from 'quasar'
+import { computed, inject, ref, shallowRef, useTemplateRef } from 'vue'
+import VueFeedbackDialogContent from './VueFeedbackDialogContent.vue'
+import { FEEDBACK_OPTIONS_KEY } from '../index.ts'
+import { type VueFeedbackDialogPluginOptions } from '../interfaces/VueFeedbackDialogPluginOptions.ts'
+import { type VueFeedbackPayload } from '../interfaces/VueFeedbackPayload.ts'
+
+const props = defineProps<{
+  meta?: string
+  options?: VueFeedbackDialogPluginOptions
+  messages?: { header: string; info: string }[]
+}>()
+
+const emit = defineEmits<{
+  (event: 'feedback', value: VueFeedbackPayload): void
+}>()
+
+const q = useQuasar()
+const fabRef = useTemplateRef<QFab>('fabRef')
+const dialog = shallowRef<DialogChainObject | undefined>()
+const pluginOptions = inject<VueFeedbackDialogPluginOptions>(FEEDBACK_OPTIONS_KEY)
+const hasReadMessages = ref<boolean>(false)
+
+const mergedOptions = {
+  ...pluginOptions,
+  ...props.options
+}
+
+function openDialog () {
+  dialog.value = q.dialog({
+    component: VueFeedbackDialogContent,
+    componentProps: {
+      options: mergedOptions,
+      messages: props.messages
+    }
+  }).onOk(data => {
+    onDialogHide()
+    emit('feedback', {
+      ...data,
+      meta: props.meta,
+      path: window.location.pathname
+    })
+  }).onCancel(() => {
+    onDialogHide()
+  }).onDismiss(() => {
+    onDialogHide()
+  })
+}
+
+function onDialogHide (closeDialog = false) {
+  if (closeDialog) {
+    dialog.value?.hide()
+  }
+  hasReadMessages.value = true
+  dialog.value = undefined
+  fabRef.value?.hide()
+}
+
+function onFabClick () {
+  if (!dialog.value) {
+    openDialog()
+  } else {
+    onDialogHide(true)
+  }
+}
+
+const doDisplayMessageCountBadge = computed<boolean>(() => {
+  return !!props.messages && !hasReadMessages.value
+})
+</script>
+
 <template>
-  <div
-    :style="[themeStylingBorder, themeStylingBackground]"
-    class="feedback-icon-wrapper"
-  >
-    <v-btn
-      :style="themeStylingColor"
-      class="icon"
-      icon
-      @click="toggleDialog"
-    >
-      <component
-        class="svg-icon"
-        :is="dialogOpen ? 'VueFeedbackDialogCloseIcon' : 'VueFeedbackDialogOpenIcon'"
-        :color="defaultOptions.layout.color"
+  <div class="feedback__wrapper">
+    <div class="relative-position">
+      <q-badge
+        v-if="doDisplayMessageCountBadge"
+        :label="(props.messages ?? [])?.length"
+        rounded
+        outline
+        text-color="primary"
+        floating
+        class="bg-white"
+        style="font-size: 1.4rem; z-index: 9999"
       />
-    </v-btn>
-    <span
-      v-show="!read && messages.length"
-      :style="[themeStylingBorder, themeStylingColor, themeStylingBackground]"
-      class="notification"
-    >
-      {{ messages.length }}
-    </span>
-    <transition name="dialog">
-      <VueFeedbackDialogWrapper
-        v-show="dialogOpen"
-        :options="options"
-        :messages="messages"
-        :flipped="flipped"
-        @close="[flipped = false, dialogOpen = false]"
-        @feedback="sendFeedback"
-        @flip="flipped = !flipped"
+      <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
+      <q-fab
+        ref="fabRef"
+        icon="mdi-message-reply-text"
+        color="primary"
+        outline
+        style="z-index: 9998"
+        class="bg-white"
+        @click="onFabClick"
       />
-    </transition>
+    </div>
   </div>
 </template>
 
-<script>
-import { VueFeedbackDialogMixin } from '@/VueFeedbackDialogMixin'
-import VueFeedbackDialogWrapper from './VueFeedbackDialogWrapper'
-import VueFeedbackDialogOpenIcon from './VueFeedbackDialogOpenIcon'
-import VueFeedbackDialogCloseIcon from './VueFeedbackDialogCloseIcon'
-
-export default {
-  name: 'VueFeedbackDialog',
-  components: {
-    VueFeedbackDialogWrapper,
-    VueFeedbackDialogOpenIcon,
-    VueFeedbackDialogCloseIcon
-  },
-  mixins: [VueFeedbackDialogMixin],
-  props: {
-    options: {
-      type: Object,
-      required: false,
-      default: () => {}
-    },
-    messages: {
-      type: Array,
-      required: false,
-      default: () => []
-    },
-    meta: {
-      type: String,
-      required: false,
-      default: ''
-    }
-  },
-  data () {
-    return {
-      dialogOpen: false,
-      read: false,
-      flipped: false
-    }
-  },
-  methods: {
-    sendFeedback (input) {
-      input.meta = this.meta
-      this.$emit('feedback', input)
-    },
-    toggleDialog () {
-      // No messages take user to form
-      if (!this.messages.length) {
-        this.flipped = true
-      }
-      this.dialogOpen = !this.dialogOpen
-      this.read = true
-    }
-  }
-}
-</script>
-
-<style lang="scss" scoped>
-.feedback-icon-wrapper {
+<style lang="scss">
+.feedback__wrapper {
   position: fixed;
   z-index: 9999;
-  bottom: 1rem;
-  right: 1.5rem;
+  bottom: 2rem;    // Increased from 1rem for more spacing
+  right: 2.5rem;   // Increased from 1.5rem for more spacing
   width: 4rem;
   height: 4rem;
   border-radius: 100%;
-}
 
-.feedback-icon-wrapper .icon {
-  width: 3.75rem;
-  height: 3.75rem;
-}
+  // Optional: Add a smooth transition for any hover effects
+  transition: all 0.3s ease;
 
-.feedback-icon-wrapper .icon .svg-icon {
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-}
-
-.feedback-icon-wrapper .icon:hover {
-  cursor: pointer;
-}
-
-.feedback-icon-wrapper .notification {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  padding: 0 7px;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-.dialog-enter-active, .dialog-leave-active {
-  transition: opacity .5s;
-}
-.dialog-enter, .dialog-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+  // Optional: Add some spacing when hovering
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 </style>
