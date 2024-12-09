@@ -1,6 +1,6 @@
 {
   "name": "@dsb-norge/vue-feedback-dialog",
-  "version": "2.0.0",
+  "version": "1.2.2",
   "description": "Feedback dialog based on Quasar for Vue",
   "type": "module",
   "keywords": [
