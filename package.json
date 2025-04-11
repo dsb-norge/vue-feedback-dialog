@@ -40,6 +40,6 @@
     "user feedback"
   ],
   "dependencies": {
-    "caniuse-lite": "1.0.30001712"
+    "caniuse-lite": "1.0.30001713"
   }
 }
